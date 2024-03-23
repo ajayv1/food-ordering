@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&display=swap');
+
+body {
+  background-color: #ddd;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* .food-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+} */
+
+.food-container {
+  display: flex;
+  flex-flow: wrap;
+  align-content: space-between;
+  /* height: 580px; */
+  
+}
+
+.card-container {
+  /* width: 30%; */
+  /* margin-bottom: 2%; (100-32*3)/2 */
+  flex: 0 30%;
+  margin-bottom: 2%;
+  padding: 20px;
+}
+
+/* Re-order items into rows */
+.card-container:nth-child(3n+1) { order: 1; }
+.card-container:nth-child(3n+2) { order: 2; }
+.card-container:nth-child(3n)   { order: 3; }
+
+/* Force new columns */
+.food-container::before,
+.food-container::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
